@@ -1,5 +1,5 @@
 {
-    "name": "my-lambda-demo",
+    "name": "my-lambda-function",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
