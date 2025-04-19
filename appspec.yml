@@ -5,4 +5,4 @@ Resources:
       Properties:
         Name: my-lambda-function
         Alias: live
-        TargetVersion: "1"
+        TargetVersion: "3"
