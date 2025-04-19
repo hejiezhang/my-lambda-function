@@ -5,4 +5,3 @@ Resources:
       Properties:
         Name: my-lambda-function
         Alias: live
-        TargetVersion: "$LATEST"
