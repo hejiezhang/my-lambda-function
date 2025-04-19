@@ -3,15 +3,9 @@ phases:
   pre_build:
     commands:
       - echo "Fetching current alias version..."
-      - CURRENT_VERSION=$(aws lambda get-alias \
-          --function-name my-lambda-function \
-          --name live \
-          --query 'FunctionVersion' \
-          --output text)
+      - CURRENT_VERSION=$(aws lambda get-alias --function-name my-lambda-function --name live --query 'FunctionVersion' --output text)
       - echo "Publishing new Lambda version..."
-      - TARGET_VERSION=$(aws lambda publish-version \
-          --function-name my-lambda-function \
-          --description "Automated deploy")
+      - TARGET_VERSION=$(aws lambda publish-version --function-name my-lambda-function --description "Automated deploy")
       - echo "Generating appspec.yml with versions $CURRENT_VERSION -> $TARGET_VERSION"
       - |
         cat > appspec.yml <<EOF
