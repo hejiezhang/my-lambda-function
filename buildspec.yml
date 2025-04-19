@@ -2,8 +2,6 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Setting up locale..."
-      - export LC_ALL="en_US.UTF-8" && locale-gen en_US.UTF-8
       - echo "Fetching current alias version..."
       - CURRENT_VERSION=$(aws lambda get-alias \
           --function-name my-lambda-function \
